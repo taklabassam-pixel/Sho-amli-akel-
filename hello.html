@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="" dir="" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="h1-title-static">شاشة ترحيب تفاعلية</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* ... (ملفات CSS كما هي) ... */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            /* توسيط المحتوى على الشاشة بالكامل */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden; 
+            background-color: #f3f4f6; /* لون خلفية أساسي يظهر بعد فتح الباب */
+            padding: 1rem;
+        }
+
+        /* 1. خلفية الباب تملأ الشاشة بالكامل */
+        #door-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-color: #eceff3;
+            transition: opacity 1.5s ease-in-out; 
+            z-index: 5; 
+        }
+
+        /* 2. الحاوية الرئيسية للمحتوى */
+        #main-splash-card {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 1rem; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        /* 3. حاوية الصورة الخلفية للنص */
+        #image-overlay-bg {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            /* يتم تعيين مسار الصورة الافتراضي هنا */
+            background-image: url('hello.png'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            /* لون احتياطي يظهر إذا فشل تحميل الصورة */
+            background-color: #4B5563; 
+        }
+        
+        /* 4. طبقة شفافة فوق الصورة لتوضيح النص */
+        #image-overlay-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-color: rgba(246, 130, 5, 0.898);*/
+            z-index: 1;
+        }
+
+        /* 5. النص الرئيسي و الزر فوق الصورة */
+        #splash-text-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: rgb(159, 232, 12);
+            text-shadow: 2px 2px 8px rgba(26, 26, 26, 0.8);
+        }
+
+        #splash-title {
+            font-size: 2.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* 6. زر 'تفضلي' */
+        #enter-app-button {
+            background-color: #4dfc67;
+            color: #0a0a0a;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            margin-top: 1.5rem;
+        }
+
+        #enter-app-button:hover {
+            background-color: #FDE047;
+            transform: scale(1.05);
+        }
+
+        /* تنسيق عام لأزرار اللغة */
+        .lang-btn {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: #059669;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div id="door-background"></div>
+
+    <div id="main-splash-card" class="mx-auto">
+        
+        <div id="image-overlay-bg">
+            <div id="splash-text-content">
+                <div id="splash-title"></div> 
+                <button id="enter-app-button"></button>
+            </div>
+        </div>
+
+        <div class="max-w-md mx-auto mt-6 mb-4 px-4 w-full">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <button onclick="setLanguage('ar', this)" data-lang-name="عربي" data-lang="ar" class="lang-btn bg-green-600 text-black font-semibold rounded-xl hover:bg-blue-700 transition duration-150">عربي</button>
+                <button onclick="setLanguage('en', this)" data-lang-name="English" data-lang="en" class="lang-btn bg-green-600 text-black font-semibold rounded-xl hover:bg-blue-700 transition duration-150">English</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="setLanguage('fa', this)" data-lang-name="فارسی" data-lang="fa" class="lang-btn bg-green-600 text-black font-semibold rounded-xl hover:bg-blue-700 transition duration-150">فارسی</button>
+                <button onclick="setLanguage('ru', this)" data-lang-name="Русский" data-lang="ru" class="lang-btn bg-green-600 text-black font-semibold rounded-xl hover:bg-blue-700 transition duration-150">Русский</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // المتغيرات العالمية
+        const doorBackground = document.getElementById('door-background');
+        const mainSplashCard = document.getElementById('main-splash-card');
+        const imageOverlayBg = document.getElementById('image-overlay-bg');
+        const splashTitle = document.getElementById('splash-title'); 
+        const enterAppButton = document.getElementById('enter-app-button');
+        const htmlTag = document.getElementById('html-tag');
+
+        const SPLASH_IMAGE_URL = 'hello.png'; 
+        const DOOR_IMAGE_URL = '93.jpg'; 
+        const MAIN_APP_FILE = 'index_prompt1.html'; 
+        
+        let currentLangCode = 'ar'; // اللغة الافتراضية
+
+        // قاموس الترجمات
+        const translations = {
+            ar: { dir: 'rtl', title: 'شو عاملي أكل؟', enterBtn: 'تفضلي! ', loadingMessage: 'جارِ التحديث...' },
+            en: { dir: 'ltr', title: 'What have you cooked?', enterBtn: 'Welcome', loadingMessage: 'Loading...' },
+            fa: { dir: 'rtl', title: 'چه غذایی پخته ای؟', enterBtn: 'بفرمایید', loadingMessage: 'درحال بارگذاری...' },
+            ru: { dir: 'ltr', title: 'Что ты приготовила?', enterBtn: 'Пожалуйста', loadingMessage: 'Загрузка...' },
+        };
+        
+        // ----------------------------------------------------
+        // ## 1. دالة تحديث مظهر الزر النشط
+        // ----------------------------------------------------
+        function highlightActiveLanguageButton(activeLangCode) {
+            const allLangButtons = document.querySelectorAll('.lang-btn');
+            allLangButtons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === activeLangCode) {
+                    btn.classList.remove('bg-green-600', 'text-black', 'hover:bg-blue-700');
+                    btn.classList.add('bg-blue-700', 'text-white', 'hover:bg-green-600');
+                } else {
+                    btn.classList.remove('bg-blue-700', 'text-white', 'hover:bg-green-600');
+                    btn.classList.add('bg-green-600', 'text-black', 'hover:bg-blue-700');
+                }
+            });
+        }
+
+
+        // ----------------------------------------------------
+        // ## 2. دالة تطبيق الترجمة على عناصر الواجهة
+        // ----------------------------------------------------
+    function applyUITranslation(langCode) {
+    const t = translations[langCode];
+    if (!t) return;
+    
+    currentLangCode = langCode; 
+    document.documentElement.setAttribute('lang', langCode);
+    document.documentElement.setAttribute('dir', t.dir);
+
+    // 🎯 جلب العناصر وفحص وجودها قبل التعديل (يمنع أخطاء 'undefined')
+
+    // 1. عنصر عنوان شاشة الترحيب
+    const splashTitle = document.getElementById('splash-title'); // 👈🏻 استخدم الـ ID الفعلي هنا
+    if (splashTitle) {
+        splashTitle.textContent = t.title;
+    }
+    
+    // 2. عنصر زر الدخول/البدء
+    const enterAppButton = document.getElementById('enter-app-button'); // 👈🏻 استخدم الـ ID الفعلي هنا
+    if (enterAppButton) {
+        enterAppButton.textContent = t.enterBtn;
+    }
+    
+    // 3. عنصر رسالة التحميل
+    const loadingMessageElement = document.getElementById('loading-message-id'); // 👈🏻 استخدم الـ ID الفعلي هنا
+    if (loadingMessageElement) {
+        loadingMessageElement.textContent = t.loadingMessage;
+    }
+    
+    // 4. (إذا كانت هناك عناصر أخرى تحتاج لترجمة في الواجهة الأساسية، أضفها هنا بنفس المنطق)
+    // مثال: const mainAppTitle = document.getElementById('main-app-title');
+    // if (mainAppTitle) { mainAppTitle.textContent = t.mainAppTitle; }
+}
+
+        // ----------------------------------------------------
+        // ## 3. دالة تبديل اللغة (حفظ وتطبيق)
+        // ----------------------------------------------------
+        function setLanguage(langCode, buttonElement) {
+            console.log(`Attempting to set language to: ${langCode}`); 
+            const t = translations[langCode];
+            if (!t) return;
+            
+            const allLangButtons = document.querySelectorAll('.lang-btn');
+            allLangButtons.forEach(btn => btn.disabled = true);
+
+            // إضافة مؤشر التحميل والنص للزر المضغوط
+            buttonElement.innerHTML = `
+                <span class="flex items-center justify-center">
+                    <svg class="animate-spin -ml-1 ${t.dir === 'rtl' ? 'mr-3' : 'ml-3'} h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    ${t.loadingMessage}
+                </span>
+            `;
+
+            // إجراء مؤجل لمحاكاة التحميل (3 ثوانٍ)
+            setTimeout(() => {
+                applyUITranslation(langCode);
+                
+                // 🔑 توحيد اسم المفتاح والحفظ
+                localStorage.setItem('preferredLang', langCode); 
+                highlightActiveLanguageButton(langCode);
+                console.log(`Language '${langCode}' saved to localStorage.`); 
+                
+                // استعادة جميع الأزرار إلى حالتها الأصلية
+                allLangButtons.forEach(btn => {
+                    btn.innerHTML = btn.getAttribute('data-lang-name');
+                    btn.disabled = false;
+                });
+                
+            }, 3000); 
+        }
+
+        // ----------------------------------------------------
+        // ## 4. دالة تحميل اللغة المحفوظة (عند بدء التشغيل)
+        // ----------------------------------------------------
+        function loadSavedLanguage() {
+    console.log('--- بدء تنفيذ loadSavedLanguage ---');
+
+    const savedLanguage = localStorage.getItem('preferredLang') || 'ar';
+    console.log(`1. القيمة المحملة من localStorage أو القيمة الافتراضية: ${savedLanguage}`);
+
+    // إزالة الفحص المسبب للتحذير والاعتماد على الدالة التي تعمل (applyUITranslation)
+
+    console.log(`3. استدعاء applyUITranslation للقيمة: ${savedLanguage}`);
+    
+    // 🎯 الحل: استدعاء الدالة التي يجب أن تحتوي على كل منطق الترجمة
+    // تأكد من أن هذه الدالة (applyUITranslation) موجودة ومُحمّلة قبل هذا السطر.
+    applyUITranslation(savedLanguage); 
+
+    document.documentElement.lang = savedLanguage;
+    document.documentElement.dir = (savedLanguage === 'ar' || savedLanguage === 'fa') ? 'rtl' : 'ltr';
+    console.log(`4. تحديث HTML Lang/Dir إلى: ${document.documentElement.lang} / ${document.documentElement.dir}`);
+
+    highlightActiveLanguageButton(savedLanguage);
+    
+    console.log(`Loaded language from localStorage: ${savedLanguage}`);
+    console.log('--- انتهى تنفيذ loadSavedLanguage ---');
+}
+        
+        // ----------------------------------------------------
+        // ## 5. دوال مساعدة (تحميل صورة، فتح التطبيق)
+        // ----------------------------------------------------
+        function checkImageLoading(url) {
+            const img = new Image();
+            img.onload = () => {
+                console.log(`Image loaded successfully: ${url}`);
+            };
+            img.onerror = () => {
+                console.error(`ERROR: Failed to load image at path: ${url}. Please ensure the file name is EXACTLY '${url}' (case-sensitive) and it is located in the root directory.`);
+                imageOverlayBg.style.backgroundImage = 'none';
+            };
+            img.src = url;
+        }
+
+        function openApp() {
+            if (enterAppButton.disabled) return;
+            enterAppButton.disabled = true;
+
+            // 1. "فتح الباب"
+            doorBackground.style.opacity = '0';
+            doorBackground.style.pointerEvents = 'none';
+
+            // 2. إخفاء محتوى الشاشة الترحيبية
+            mainSplashCard.style.opacity = '0';
+            mainSplashCard.style.pointerEvents = 'none';
+
+            // 3. الانتقال إلى الملف المحدد باستخدام اللغة الحالية
+            setTimeout(() => {
+                window.location.href = `${MAIN_APP_FILE}?lang=${currentLangCode}`;
+            }, 1500); 
+        }
+
+
+        // ----------------------------------------------------
+        // ## 6. تهيئة البدء (WINDOW.ONLOAD)
+        // ----------------------------------------------------
+        window.onload = function() {
+            // 🔑 1. تحميل اللغة المحفوظة وتطبيقها فوراً
+            loadSavedLanguage(); 
+            
+            // 2. تعيين خلفية الباب كحالة افتراضية
+            doorBackground.style.backgroundImage = `url('${DOOR_IMAGE_URL}')`;
+            
+            // 3. ربط دالة فتح التطبيق بزر "تفضلي"
+            enterAppButton.onclick = openApp;
+            
+            // 4. التحقق من تحميل صورة الخلفية
+            checkImageLoading(SPLASH_IMAGE_URL);
+        };
+        
+    </script>
+</body>
+</html>
