@@ -11,18 +11,18 @@ const urlsToCache = [
   '/mealsdatabase1.js',
   '/analyse_meals_m.js',
   '/style.css',
-  '/fonts/Amiri-Regular.ttf',
-  '/fonts/Amiri-Bold.ttf',
-  '/fonts/ExtendedKufic-Bold.ttf',
-  '/fonts/Segoe UI-Regular.ttf',
-  '/fonts/Segoe UI-Bold.ttf',
-  '/fonts/Sans-Serif-Regular.ttf',
-  '/fonts/Sans-Serif-Bold.ttf',
+  '/Amiri-Regular.ttf',
+  '/Amiri-Bold.ttf',
+  '/ExtendedKufic-Bold.ttf',
+  '/Segoe UI-Regular.ttf',
+  '/Segoe UI-Bold.ttf',
+  '/Sans-Serif-Regular.ttf',
+  '/Sans-Serif-Bold.ttf',
   '/J7aRnpd8CGxBHpUgtLMA7w.woff2',
   '/J7acnpd8CGxBHp2VkaY6zp5yGw.woff2',
   '/J7acnpd8CGxBHp2VkaYxzp5yGw.woff2',
-  '/images/icons/icon-192x192.png',
-  '/images/icons/icon-512x512.png',
+  '/icon-192x192.png',
+  '/icon-512x512.png',
   '/manifest.json',
   '/93.jpg',
   '/hello.png'
@@ -78,6 +78,7 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 
 });
+
 
 
 
