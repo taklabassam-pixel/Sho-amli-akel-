@@ -1,6 +1,6 @@
 {
   "name": "شو عاملي أكل؟ ",
-  "short_name": "Sho Amli Akel?",
+  "short_name": "sho smli skel?",
   "description": " تطبيق -شو عاملي أكل؟-لاختيار الوجبات الغذائية الملائمة ",
   "start_url": "./index.html",
   "display": "standalone",
@@ -22,5 +22,6 @@
   ]
 
 }
+
 
 
