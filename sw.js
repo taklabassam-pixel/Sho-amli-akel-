@@ -1,5 +1,5 @@
 // 1. تحديد اسم ونسخة ذاكرة التخزين المؤقت
-const CACHE_NAME = 'sho amli akel?-v2';
+const CACHE_NAME = 'sho amli akel?-v3';
 
 // قائمة الملفات الأساسية التي يجب تخزينها مؤقتًا عند التثبيت
 // ⚠️ يجب عليك تحديث هذه القائمة لتشمل جميع ملفاتك الأساسية
@@ -78,4 +78,5 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 
 });
+
 
