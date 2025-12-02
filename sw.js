@@ -11,20 +11,15 @@ const urlsToCache = [
   '/mealsdatabase1.js',
   '/analyse_meals_m.js',
   '/style.css',
-  '/Amiri-Regular.ttf',
-  '/Amiri-Bold.ttf',
-  '/ExtendedKufic-Bold.ttf',
-  '/Segoe UI-Regular.ttf',
-  '/Segoe UI-Bold.ttf',
+  '/J7aRnpd8CGxBHpUrtLMA7w.woff2',
+  '/J7aRnpd8CGxBHpUutLM.woff2',
   '/Sans-Serif-Regular.ttf',
   '/Sans-Serif-Bold.ttf',
   '/J7aRnpd8CGxBHpUgtLMA7w.woff2',
   '/J7acnpd8CGxBHp2VkaY6zp5yGw.woff2',
-  '/J7acnpd8CGxBHp2VkaYxzp5yGw.woff2',
   '/icon-192x192.png',
   '/icon-512x512.png',
   '/manifest.json',
-  '/93.jpg',
   '/hello.png'
   // أضف جميع ملفات الخطوط والصور الثابتة هنا
 ];
@@ -78,6 +73,7 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 
 });
+
 
 
 
