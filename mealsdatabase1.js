@@ -83,7 +83,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["low"],
   "mealTime": ["breakfast", "lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -168,7 +168,7 @@
   "health": ["normal"],
   "cost": ["low"],
   "mealTime": ["breakfast"],
-  "weather": ["hot","moderate","cold"],
+  "weather": ["hot", "moderate", "cold"],
   "mealType": ["fast food"]
 },
  {
@@ -190,9 +190,9 @@
     "🍳🍳🍳🍳 غطِّ المقلاة واتركها على نار خفيفة لمدة 5-7 دقائق أو حتى ينضج بياض البيض ويبقى الصفار سائلاً قليلاً. زيّنها بالبقدونس وقدميها ساخنة مع الخبز."
   ],
   "preparation_en": [
-    "🍳 In a pan over medium heat, heat the olive oil, then add the chopped onion and green pepper and sauté until softened.",
-    "🍳🍳 Add the chopped tomatoes, tomato paste, spices, and salt. Let the sauce simmer on low heat for 10 minutes until it thickens.",
-    "🍳🍳🍳 Make small wells in the sauce with a spoon, and crack an egg into each well.",
+    "🍳 In a pan over medium heat, heat the olive oil, then add the chopped onion and green pepper and sauté until softened." ,
+    "🍳🍳 Add the chopped tomatoes, tomato paste, spices, and salt. Let the sauce simmer on low heat for 10 minutes until it thickens." ,
+    "🍳🍳🍳 Make small wells in the sauce with a spoon, and crack an egg into each well." ,
     "🍳🍳🍳🍳 Cover the pan and let it cook on low heat for 5-7 minutes or until the egg whites are set and the yolks are still slightly runny. Garnish with parsley and serve hot with bread."
   ],
   "preparation_ru": [
@@ -210,7 +210,7 @@
   "health": ["normal", "diabetes", "pressure"],
   "cost": ["low"],
   "mealTime": ["breakfast"],
-  "weather": ["hot","moderate","cold"],
+  "weather": ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -252,7 +252,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -294,7 +294,7 @@
   "health": ["normal"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
  {
@@ -336,7 +336,7 @@
   "health": ["normal", "diabetes"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -378,7 +378,7 @@
   "health": ["normal"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -420,7 +420,7 @@
   "health": ["normal"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -504,7 +504,7 @@
   "health": ["normal", "pressure", "heart"],
   "cost": ["high"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -546,7 +546,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather": ["hot","moderate","cold"],
+  "weather": ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -588,7 +588,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
  {
@@ -630,7 +630,7 @@
   "health": ["normal"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
  {
@@ -672,7 +672,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
   {
@@ -714,7 +714,7 @@
   "health": ["normal"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather":  ["hot","moderate","cold"],
+  "weather":  ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
  {
@@ -756,7 +756,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["medium"],
   "mealTime": ["lunch", "dinner"],
-  "weather": ["hot","moderate","cold"],
+  "weather": ["hot", "moderate", "cold"],
   "mealType": ["regular meal"]
 },
  {
@@ -798,7 +798,7 @@
   "health": ["normal"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather": ["hot","moderate","cold"],
+  "weather": ["hot", "moderate", "cold"],
   "mealType": ["fast food"]
 },
  {
@@ -840,7 +840,7 @@
   "health": ["normal", "diabetes", "pressure", "heart"],
   "cost": ["low"],
   "mealTime": ["lunch", "dinner"],
-  "weather": ["cold","moderate"],
+  "weather": ["cold", "moderate"],
   "mealType": ["regular meal"]
 },
   {
@@ -3795,7 +3795,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["breakfast"],
-    "weather":  ["hot","moderate","cold"],
+    "weather":  ["hot", "moderate", "cold"],
     "mealType": ["fast food"]
   },
   {
@@ -3893,7 +3893,7 @@
     "health": ["normal", "heart"],
     "cost": ["low"],
     "mealTime": ["breakfast"],
-    "weather":  ["hot","moderate","cold"],
+    "weather":  ["hot", "moderate", "cold"],
     "mealType": ["fast food"]
   },
   {
@@ -3991,7 +3991,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch"],
-    "weather":  ["hot","moderate","cold"],
+    "weather":  ["hot", "moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4088,7 +4088,7 @@
     "health": ["low_fat_protein", "high_fiber", "portion_control"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["hot","moderate","cold"],
+    "weather":  ["hot", "moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4186,7 +4186,7 @@
     "health": ["low_calorie", "high_probiotic", "low_sodium", "lunch_dinner"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["hot","moderate"],
+    "weather":  ["hot", "moderate"],
     "mealType": ["fast food"]
   },
   {
@@ -4284,7 +4284,7 @@
     "health": ["high_fiber", "low_fat", "low_sodium", "lunch_dinner"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["hot","moderate","cold"],
+    "weather":  ["hot", "moderate", "cold"],
     "mealType": "long prep time"
   },
   {
@@ -4382,7 +4382,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["hot","moderate"],
+    "weather":  ["hot", "moderate"],
     "mealType": ["fast food"]
   },
  {
@@ -4424,7 +4424,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4466,7 +4466,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4508,7 +4508,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather": ["hot","moderate"],
+    "weather": ["hot", "moderate"],
     "mealType": ["fast food"]
   },
   {
@@ -4551,7 +4551,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["fast food"]
   },
   {
@@ -4593,7 +4593,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4631,7 +4631,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather": ["hot","moderate","cold"],
+    "weather": ["hot", "moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4650,12 +4650,12 @@
       "🥣 اطبخي البصل في القليل جداً من الماء حتى يلين.",
       "🥣🥣 أضيفي العدس والتوابل والماء واغلِ المزيج.",
       "🥣🥣🥣 قطّعيها الخبز إلى قطع صغيرة وأضيفيه إلى الحساء.",
-      "🥣🥣🥣🥣varlak اتركيه على نار هادئة جداً لمدة 10 دقائق حتى يمتص الخبز السائل. يقدم كوجبة فطور أو عشاء مغذية."
+      "🥣🥣🥣🥣 اتركيه على نار هادئة جداً لمدة 10 دقائق حتى يمتص الخبز السائل. يقدم كوجبة فطور أو عشاء مغذية."
     ],
     "preparation_en": [
-      "🥣 Cook the onion in very little water until soft.",
-      "🥣🥣 Add the lentils, spices, and water and bring to a boil.",
-      "🥣🥣🥣 Cut the bread into small pieces and add it to the soup.",
+      "🥣 Cook the onion in very little water until soft." ,
+      "🥣🥣 Add the lentils, spices, and water and bring to a boil." ,
+      "🥣🥣🥣 Cut the bread into small pieces and add it to the soup." ,
       "🥣🥣🥣🥣varlak Simmer over very low heat for 10 minutes until the bread absorbs the liquid. Serve as a nutritious breakfast or dinner."
     ],
     "preparation_ru": [
@@ -4673,7 +4673,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["fast food"]
 
   },
@@ -4713,7 +4713,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["breakfast"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["fast food"]
   },
   {
@@ -4752,7 +4752,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["breakfast"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4791,7 +4791,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["breakfast"],
-    "weather": ["moderate","cold"],
+    "weather": ["moderate", "cold"],
     "mealType": ["fast food"]
   },
   {
@@ -4831,7 +4831,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4870,7 +4870,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather": ["moderate","cold"],
+    "weather": ["moderate", "cold"],
     "mealType": ["regular meal"]
   },
   {
@@ -4910,7 +4910,7 @@
     "health": ["normal", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["hot","moderate"],
+    "weather":  ["hot", "moderate"],
     "mealType": ["regular meal"]
   },
   {
@@ -4950,7 +4950,7 @@
     "health": ["normal", "diabetes", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather":  ["moderate","cold"],
+    "weather":  ["moderate", "cold"],
     "mealType":  ["regular meal"]
   },
   {
@@ -4990,7 +4990,7 @@
     "health": ["normal", "pressure", "heart"],
     "cost": ["low"],
     "mealTime": ["lunch", "dinner"],
-    "weather": ["moderate","cold"],
+    "weather": ["moderate", "cold"],
     "mealType":  ["regular meal"]
   },
   {
@@ -6003,6 +6003,7 @@
     "mealType": ["qiuck meal"]
   }
 ];
+
 
 
 
