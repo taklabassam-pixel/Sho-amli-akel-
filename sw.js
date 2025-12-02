@@ -10,7 +10,7 @@ const urlsToCache = [
   '/index_prompt1.html',
   '/mealsdatabase1.js',
   '/analyse_meals_m.js',
-  '/tailwind.css',
+  '/style.css',
   '/fonts/Amiri-Regular.ttf',
   '/fonts/Amiri-Bold.ttf',
   '/fonts/ExtendedKufic-Bold.ttf',
@@ -78,5 +78,6 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 
 });
+
 
 
