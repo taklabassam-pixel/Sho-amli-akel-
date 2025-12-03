@@ -2,7 +2,7 @@
   "name": "شو عاملي أكل؟ ",
   "short_name": "sho smli skel?",
   "description": " تطبيق -شو عاملي أكل؟-لاختيار الوجبات الغذائية الملائمة ",
-  "start_url": "./splash.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#22c55e",
@@ -22,6 +22,7 @@
   ]
 
 }
+
 
 
 
