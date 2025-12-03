@@ -768,7 +768,7 @@
         altBtn: 'ابحث عن وجبة بديلة',
         confirmBtn: 'موافقة على الوجبة',
         exitBtn: 'خروج',
-        confirmMsg: '✅ تم اختيار الوصفة بنجاح!',
+        confirmMsg: '',
         healthLabel: 'الحالة الصحية',
         costLabel: 'الكلفة',
         timeLabel: 'وقت الوجبة',
@@ -832,7 +832,7 @@
         altBtn: 'Find an alternative meal', 
         confirmBtn: 'Confirm meal selection', 
         exitBtn: 'Exit',
-        confirmMsg: '✅ Recipe successfully selected!',
+        confirmMsg: '',
         healthLabel: 'Health Status', 
         costLabel: 'Cost', 
         timeLabel: 'Meal Time', 
@@ -1032,7 +1032,7 @@
         altBtn: 'Найти альтернативное блюдо', 
         confirmBtn: 'Подтвердить выбор', 
         exitBtn: 'Выход', 
-        confirmMsg: '✅ Рецепт успешно выбран!', 
+        confirmMsg: '', 
         healthLabel: 'Состояние здоровья', 
         costLabel: 'Стоимость', 
         timeLabel: 'Время приёма пищи', 
@@ -1243,7 +1243,7 @@
         altBtn: 'یافتن غذای جایگزین', 
         confirmBtn: 'تأیید انتخاب غذا', 
         exitBtn: 'خروج', 
-        confirmMsg: '✅ دستور پخت با موفقیت انتخاب شد!', 
+        confirmMsg: '', 
         healthLabel: 'وضعیت سلامتی', 
         costLabel: 'هزینه', 
         timeLabel: 'زمان وعده غذایی', 
@@ -1831,19 +1831,26 @@ function isEggIngredient(ingredientName) {
  * @param {number} multiplier المضاعف المُعاد من getQuantityMultiplier().
  * @returns {object} نسخة جديدة من الوجبة تحتوي على الكميات المحتسبة.
  */
+/**
+ * تقوم بحساب الكميات الجديدة للمكونات بناءً على مضاعف معين،
+ * وتجري تحويلات ذكية للوحدات (مثل تحويل مل إلى كوب أو لتر) لتسهيل القراءة.
+ * * الميزة الأساسية: تم إزالة شرط التجاوز (multiplier === 1) لضمان أن حقل quantity
+ * يحتوي دائماً على الكمية والوحدة مدمجتين، حتى في الكميات الأساسية.
+ */
 function calculateNewQuantities(meal, multiplier) {
-    const TOAST_BREAD_WEIGHT_GRAMS = 35;
+    const TOAST_BREAD_WEIGHT_GRAMS = 35; // وزن رغيف الخبز المحمص التقريبي
 
-    if (multiplier === 1) {
-        return meal;
-    }
+    // 🔑 تم إزالة الشرط if (multiplier === 1) { return meal; } 
+    // الآن، سيمر المضاعف 1 عبر عملية المعالجة لضمان دمج الكمية والوحدة.
 
     const calculatedIngredients = meal.ingredients.map(ingredient => {
+        // استخلاص البيانات الأساسية
         let baseQuantity = ingredient.quantity;
         let baseUnit = ingredient.unit_ar;
         const ingredientName = ingredient.item_ar || "";
 
         // 1. تطبيق المضاعف
+        // إذا كان المضاعف = 1، فستبقى newQuantity كما هي.
         let newQuantity = baseQuantity * multiplier;
 
         // 🥚 تدوير البيض للعدد الصحيح الأقرب (لا يقل عن 1)
@@ -1851,7 +1858,7 @@ function calculateNewQuantities(meal, multiplier) {
             newQuantity = Math.max(1, Math.round(newQuantity));
         }
 
-        // 🍞 التحقق من "خبز محمص" وتحويله
+        // 🍞 التحقق من "خبز محمص" وتحويله من وزن إلى عدد
         if (ingredientName && ingredientName.includes('خبز محمص')) {
             let totalGrams = newQuantity;
 
@@ -1864,9 +1871,9 @@ function calculateNewQuantities(meal, multiplier) {
             baseUnit = `${baseUnit} (رغيف)`;
         }
 
-        // 2. التحويل من "مل" إلى وحدات عملية أكبر
+        // 2. التحويل من "مل" إلى وحدات عملية أكبر (كوب، ملعقة كبيرة، لتر)
         if (baseUnit === 'مل' || baseUnit === 'مليلتر') {
-            baseUnit = 'مل';
+            baseUnit = 'مل'; // توحيد الاسم لوحدة مل
 
             if (newQuantity >= 1000) {
                 newQuantity /= 1000;
@@ -1902,13 +1909,18 @@ function calculateNewQuantities(meal, multiplier) {
              return {
                  ...ingredient,
                  unit_ar: baseUnit, 
-                 quantity: finalOutputText
+                 quantity: finalOutputText // مثال: "حبة ونصف" (النص كامل)
              };
         } else {
+             // 🔑 هذا المسار يتم تنفيذه الآن حتى عندما يكون المضاعف 1
              const finalQuantity = Math.round(newQuantity * 100) / 100;
+             
+             // 🎯 ضمان دمج الكمية والوحدة في حقل quantity
+             const finalDisplay = `${finalQuantity} ${baseUnit}`; 
+
              return {
                  ...ingredient,
-                 quantity: finalQuantity,
+                 quantity: finalDisplay, // مثال: "1.0 جرام" أو "250 جرام"
                  unit_ar: baseUnit
              };
         }
@@ -1919,7 +1931,6 @@ function calculateNewQuantities(meal, multiplier) {
         ingredients: calculatedIngredients
     };
 }
-
 // ═══════════════════════════════════════════════════════════════════════════════════════
 // 🔢 نظام الترجمة الحسابي للمقادير - الإصدار المُصحَّح V2
 // ═══════════════════════════════════════════════════════════════════════════════════════
@@ -2733,7 +2744,7 @@ function displayMeal(mealData) {
                 <h3 class="meal-title">🥗 ${translatedMeal.name}🥗</h3>
                  <div class="ingredient flex-row-aligned">
                  <div id="confirmationMsg" style="display: none; color: green; font-weight: bold;">
-                 //تم تأكيد الوجبة بنجاح!
+                 
                  </div>
             </div>
            <div class="flex-start-group">
@@ -2961,5 +2972,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
 
