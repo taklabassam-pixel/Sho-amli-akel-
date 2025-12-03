@@ -763,7 +763,7 @@
 
        ar: {
         dir: 'rtl',
-        title: '👩‍🍳شو عاملي أكل؟ 👩‍🍳',
+        title: '👩‍🍳شو عاملي أكل؟',
         suggestBtn: 'اضغطي هنا لاقترح عليك وجبة',
         altBtn: 'ابحث عن وجبة بديلة',
         confirmBtn: 'موافقة على الوجبة',
@@ -827,7 +827,7 @@
     // ====================================================================================
     en: {
         dir: 'ltr',
-        title: '👩‍🍳 ?What are you cooking 👩‍🍳',
+        title: '?What are you cooking 👩‍🍳' ,
         suggestBtn: 'Click here to suggest a meal', 
         altBtn: 'Find an alternative meal', 
         confirmBtn: 'Confirm meal selection', 
@@ -1027,7 +1027,7 @@
     // ====================================================================================
     ru: {
         dir: 'ltr',
-        title: '👩‍🍳 ?Что мы приготовим 👩‍🍳',
+        title: '?Что мы приготовим 👩‍🍳',
         suggestBtn: 'Нажмите, чтобы предложить блюдо', 
         altBtn: 'Найти альтернативное блюдо', 
         confirmBtn: 'Подтвердить выбор', 
@@ -1238,7 +1238,7 @@
     // ====================================================================================
     fa: { 
         dir: 'rtl', 
-        title: '👩‍🍳چی می‌پزی؟ 👩‍🍳', 
+        title: 'چی می‌پزی؟ 👩‍🍳', 
         suggestBtn: 'برای پیشنهاد غذا اینجا کلیک کنید', 
         altBtn: 'یافتن غذای جایگزین', 
         confirmBtn: 'تأیید انتخاب غذا', 
@@ -2862,7 +2862,7 @@ function showHealthMessage() {
         if (document.body.contains(msgElement)) {
             document.body.removeChild(msgElement);
         }
-    }, 3000);
+    }, 8000);
 }
 
 
@@ -2926,7 +2926,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             confirmationMsg.style.display = 'none';
             showHealthMessage();
-        }, 8000); 
+        }, 1000); 
     });
 
     document.getElementById('exitBtn').addEventListener('click', () => {
@@ -2962,7 +2962,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.currentSuggestedMeal = null;
             // يمكنك توجيه المستخدم لصفحة أخرى إذا لزم الأمر
             window.location.href = 'index.html';
-        }, 10000);
+        }, 8000);
     });
     
     // 4. عرض رسالة البداية المترجمة عند التحميل
@@ -2972,6 +2972,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
 
 
