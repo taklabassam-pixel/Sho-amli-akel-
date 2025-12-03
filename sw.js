@@ -6,7 +6,7 @@ const CACHE_NAME = 'sho amli akel?-v3';
 const urlsToCache = [
   '/', // الصفحة الرئيسية (إذا كانت index.html أو /)
   'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap',
-  '/splash.html',
+  '/index.html',
   '/index_prompt1.html',
   '/mealsdatabase1.js',
   '/analyse_meals_m.js',
@@ -73,6 +73,7 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 
 });
+
 
 
 
