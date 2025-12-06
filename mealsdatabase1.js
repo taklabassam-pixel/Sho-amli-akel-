@@ -2596,7 +2596,7 @@
     "id": 38,
     "name_ar": "كنافة بالجبن",
     "name_en": "Kunafa (Sweet Cheese Pastry)",
-    "name_ru": ""Кнафе (Сладкое сырное тесто)",
+    "name_ru": "Кнафе (Сладкое сырное тесто)",
     "name_fa": "کنافه با پنیر (شیرینی)",
     "ingredients": [
       {
@@ -6045,6 +6045,7 @@
     "mealType": ["qiuck meal"]
   }
 ];
+
 
 
 
